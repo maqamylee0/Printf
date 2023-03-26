@@ -18,6 +18,7 @@ int print_str(va_list args)
 	if (str == NULL)
 		return (-1);
 
+	i = 0;
 	while (str[i])
 	{
 		temp = write(1, &str[i], 1);
