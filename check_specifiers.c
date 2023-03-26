@@ -11,9 +11,11 @@ int (*check_specifier(const char *format))(va_list)
 {
 	int i;
 
-	func_t array[4] = {
+	func_t array[6] = {
 		{"c", print_char},
 		{"s", print_str},
+		{"d", print_int},
+		{"i", print_int},
 		{"%", print_cent},
 		{NULL, NULL}};
 
