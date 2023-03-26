@@ -15,8 +15,9 @@ int _printf(const char *format, ...)
 	int temp = 0;
 	int count = 0;
 	va_list args;
-	va_start(args, format);
 	int (*f)(va_list);
+
+	va_start(args, format);
 
 	/* ensures NULL pointer isnt parsed */
 	if (format == NULL)
