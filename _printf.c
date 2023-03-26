@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 	int (*f)(va_list);
 
 	/* ensures NULL pointer isnt parsed */
-	if (!format[i])
+	if (format == NULL)
 		return (-1);
 	
 	/* prints each character of string */
