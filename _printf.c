@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 	int (*f)(va_list);
 
 	/* ensures NULL pointer isnt parsed */
-	if (format == NULL)
+	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
 
 	va_start(args, format);
