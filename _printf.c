@@ -43,13 +43,13 @@ int _printf(const char *format, ...)
 				i = i + 2;
 				continue;
 			}
-		/*	if (format[i + 1] != '\0')
+			if (format[i + 1] != '\0')
 			{
 				temp = write(1, &format[i + 1], 1);
 				count += temp;
 				i = i + 2;
 				continue;
-			}*/
+			}
 		}
 	}
 	va_end(args);
