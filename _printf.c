@@ -50,6 +50,10 @@ int _printf(const char *format, ...)
 				i = i + 2;
 				continue;
 			}
+			else
+			{
+				return (-1);
+			}
 		}
 	}
 	va_end(args);
