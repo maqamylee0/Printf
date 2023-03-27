@@ -14,11 +14,11 @@ int _printf(const char *format, ...)
 	va_list args;
 	int (*f)(va_list);
 
-	va_start(args, format);
-
 	/* ensures NULL pointer isnt parsed */
 	if (format == NULL)
 		return (-1);
+
+	va_start(args, format);
 	
 	/* prints each character of string */
 	while (format[i])
