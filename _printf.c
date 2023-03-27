@@ -12,12 +12,9 @@ int _printf(const char *format, ...)
 	va_list args;
 	int (*f)(va_list);
 
-<<<<<<< HEAD
 	if (format == NULL || format[i] == '\0')
 		return (-1);
 
-	va_start(args, format);
-=======
 	va_start(args, format);
 
 	/* ensures NULL pointer isnt parsed */
@@ -28,7 +25,6 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	/* prints each character of string */
->>>>>>> 14ca5e9cecbb7805eda6f642f8e560b6b4ddbd3b
 	while (format[i])
 	{
 		if (format[i] != '%')
