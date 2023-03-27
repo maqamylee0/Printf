@@ -25,6 +25,10 @@ int (*check_specifier(const char *format))(va_list)
 		{
 			return (array[i].f);
 		}
+		else
+		{
+			break;
+		}
 	}
 	return (NULL);
 }
