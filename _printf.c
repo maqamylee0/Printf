@@ -13,13 +13,10 @@ int _printf(const char *format, ...)
 	va_list args;
 	int (*f)(va_list);
 
-	/* ensures NULL pointer isnt parsed */
 	if (format == NULL)
 		return (-1);
 
-	 va_start(args, format);
-	
-	/* prints each character of string */
+	va_start(args, format);
 	while (format[i])
 	{
 		if (format[i] != '%')
@@ -32,9 +29,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == '\0')
-			{
 				break;
-			}
 			f = check_specifier(&format[i + 1]);
 			if (f != NULL)
 			{
@@ -43,17 +38,8 @@ int _printf(const char *format, ...)
 				i = i + 2;
 				continue;
 			}
-			if (format[i + 1] != '\0')
-			{
-				temp = write(1, &format[i + 1], 1);
-				count += temp;
-				i = i + 2;
-				continue;
-			}
 			else
-			{
 				return (-1);
-			}
 		}
 	}
 	va_end(args);
