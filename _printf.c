@@ -8,19 +8,14 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0;
-	int temp = 0;
-	int count = 0;
+	unsigned int i = 0, temp = 0, count = 0;
 	va_list args;
 	int (*f)(va_list);
 
-	/* ensures NULL pointer isnt parsed */
-	if (format == NULL)
+	if (format == NULL || format[i] == '\0')
 		return (-1);
 
 	va_start(args, format);
-	
-	/* prints each character of string */
 	while (format[i])
 	{
 		if (format[i] != '%')
