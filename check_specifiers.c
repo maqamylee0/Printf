@@ -17,7 +17,7 @@ int (*check_specifier(const char *format))(va_list)
 		{"d", print_int},
 		{"i", print_int},
 		{"%", print_cent},
-		{'\0', NULL}};
+		{NULL, NULL}};
 
 	for (i = 0; array[i].p != NULL; i++)
 	{

@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 				continue;
 			}
 			else
-				break;
+				return (-1);
 		}
 	}
 	va_end(args);
