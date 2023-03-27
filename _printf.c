@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	int (*f)(va_list);
 
-	if (format == NULL || format[i] == '\0')
+	if (format == NULL)
 		return (-1);
 
 	va_start(args, format);
@@ -20,7 +20,11 @@ int _printf(const char *format, ...)
 	/* prints each character of string */
 	while (format[i])
 	{
-		if (format[i] != '%')
+		if (format[i] == '%' && format[i + 1] == '\0')
+		{
+			return (-1);
+		}
+		if (format[i] != '%' && format[i + 1] != '\0')
 		{
 			temp = write(1, &format[i], 1);
 			count += temp;
