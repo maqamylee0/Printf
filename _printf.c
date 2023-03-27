@@ -8,7 +8,7 @@
  */
 int _printf(const char *format, ...)
 {
-	unsigned int i = 0, temp = 0, count = 0;
+	int i = 0, temp = 0, count = 0;
 	va_list args;
 	int (*f)(va_list);
 
@@ -16,13 +16,6 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(args, format);
-
-	/* ensures NULL pointer isnt parsed */
-	if (!format || (format[0] == '%' && !format[1]))
-		return (-1);
-
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
-		return (-1);
 
 	/* prints each character of string */
 	while (format[i])
@@ -42,16 +35,11 @@ int _printf(const char *format, ...)
 				temp = f(args);
 				count = count + temp;
 				i = i + 2;
-				continue;
 			}
-			if (format[i + 1] == '\0')
-			{
-				break;
-			}
-			if (format[i + 1] != '\0')
+			else
 			{
 				temp = write(1, &format[i + 1], 1);
-				count += temp;
+				count = count + temp;
 				i = i + 2;
 				continue;
 			}
