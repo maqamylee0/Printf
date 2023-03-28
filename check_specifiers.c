@@ -21,6 +21,7 @@ int *i, char *buff, unsigned long int *buff_loc)
 		{"s", cpy_str},
 		{"d", cpy_int},
 		{"i", cpy_int},
+		{"b", cpy_bin},
 		{NULL, NULL}};
 
 	if (print_percent(format, i, buff, buff_loc))
