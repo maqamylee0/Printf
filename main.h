@@ -6,13 +6,15 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int _putchar(char c);
 int _printf(const char *format, ...);
-int (*check_specifier(const char *format))(va_list);
-int print_char(va_list args);
-int print_str(va_list args);
-int print_cent(va_list args);
-int print_int(va_list args);
+int check_specifier(va_list args, const char *format,
+int *i, char *buff, unsigned long int *buff_loc);
+void print_buff(char *buff, unsigned long int *buff_loc);
+void buff_check(char *buff, unsigned long int *buff_loc);
+int print_percent(const char *format, int *i, char *buff,
+unsigned long int *buff_loc);
+int cpy_str(va_list args, char *buff, unsigned long int *buff_loc);
+int cpy_char(va_list args, char *buff, unsigned long int *buff_loc);
 
 /**
  * struct func - takes specifier
@@ -26,7 +28,7 @@ int print_int(va_list args);
 typedef struct func
 {
 	char *p;
-	int (*f)(va_list);
+	int (*f)(va_list, char *, unsigned long int *);
 } func_t;
 
 #endif
