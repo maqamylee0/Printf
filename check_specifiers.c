@@ -19,6 +19,8 @@ int *i, char *buff, unsigned long int *buff_loc)
 	func_t print[] = {
 		{"c", cpy_char},
 		{"s", cpy_str},
+		{"d", cpy_int},
+		{"i", cpy_int},
 		{NULL, NULL}};
 
 	if (print_percent(format, i, buff, buff_loc))
