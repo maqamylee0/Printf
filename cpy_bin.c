@@ -13,7 +13,7 @@ int cpy_bin(va_list args, char *buff, unsigned long int *buff_loc)
 	int count = 0;
 	int num = va_arg(args, int);
 	int rem;
-	char str[100];
+	char *str = (char*)malloc(sizeof(char) * (num + 1));
 	int i = 0;
 
 	if (num < 2)
@@ -22,9 +22,10 @@ int cpy_bin(va_list args, char *buff, unsigned long int *buff_loc)
 		buff[*buff_loc] = (char)(num) + '0';
 		*buff_loc = *buff_loc + 1;
 		count++;
+		free(str);
 		return (count);
 	}
-	while (num >= 2)
+	while (num > 0)
 	{
 		rem = num % 2;
 		buff_check(buff, buff_loc);
@@ -32,10 +33,10 @@ int cpy_bin(va_list args, char *buff, unsigned long int *buff_loc)
 		count++;
 		num /= 2;
 	}
-	buff_check(buff, buff_loc);
-	str[i] = num + '0';
+
+	str[i] = '\0';
 	*buff_loc = *buff_loc + 1;
-	count++;
+	i--;
 
 	while (i >= 0)
 	{
