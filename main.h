@@ -17,6 +17,11 @@ int cpy_str(va_list args, char *buff, unsigned long int *buff_loc);
 int cpy_char(va_list args, char *buff, unsigned long int *buff_loc);
 int cpy_int(va_list args, char *buff, unsigned long int *buff_loc);
 int cpy_bin(va_list args, char *buff, unsigned long int *buff_loc);
+int cpy_short_unsigned_int(va_list args, char *buff,
+unsigned long int *buff_loc);
+int cpy_oct(va_list args, char *buff, unsigned long int *buff_loc);
+int cpy_hex(va_list args, char *buff, unsigned long int *buff_loc);
+int cpy_x_hex(va_list args, char *buff, unsigned long int *buff_loc);
 
 /**
  * struct func - takes specifier

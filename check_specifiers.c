@@ -16,13 +16,9 @@ int *i, char *buff, unsigned long int *buff_loc)
 {
 	int j, count = 0, match = 0;
 
-	func_t print[] = {
-		{"c", cpy_char},
-		{"s", cpy_str},
-		{"d", cpy_int},
-		{"i", cpy_int},
-		{"b", cpy_bin},
-		{NULL, NULL}};
+	func_t print[] = {{"c", cpy_char}, {"s", cpy_str}, {"d", cpy_int},
+	{"i", cpy_int}, {"b", cpy_bin}, {"o", cpy_oct}, {"x", cpy_hex},
+	{"X", cpy_x_hex}, {"u", cpy_short_unsigned_int}, {NULL, NULL}};
 
 	if (print_percent(format, i, buff, buff_loc))
 	{
