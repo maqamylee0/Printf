@@ -13,8 +13,20 @@ int cpy_bin(va_list args, char *buff, unsigned long int *buff_loc)
 	int count = 0;
 	int num = va_arg(args, int);
 	int rem;
-	char *str = (char*)malloc(sizeof(char) * (num + 1));
+	char *str;
 	int i = 0;
+
+	if (num == 0)
+	{
+		buff_check(buff, buff_loc);
+		buff[*buff_loc] = '0';
+		*buff_loc = *buff_loc + 1;
+		return (1);
+	}
+	str = malloc(sizeof(char) * num + 1);
+	if (!str)
+		return (-1)
+
 
 	if (num < 2)
 	{
