@@ -11,7 +11,7 @@ int cpy_bin(va_list args, char *buff, unsigned long int *buff_loc)
 {
 
 	int count, len = 0;
-	int num_1, num = va_arg(args, int);
+	unsigned int num_1, num = va_arg(args, int);
 	char *str;
 	int i;
 
