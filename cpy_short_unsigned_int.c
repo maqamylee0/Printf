@@ -17,14 +17,7 @@ unsigned long int *buff_loc)
 	int div = 1;
 	int num = va_arg(args, int);
 
-	if (num < 0)
-	{
-		n = (unsigned int) -num;
-	}
-	else
-	{
-		n = (unsigned int) num;
-	}
+	n = (unsigned int) num;
 
 	for (; n / div > 9; )
 		div *= 10;
