@@ -13,13 +13,13 @@ int cpy_hex(va_list args, char *buff, unsigned long int *buff_loc)
 	int count, len = 0;
 	unsigned int num_1, num = va_arg(args, int);
 	char *str;
-	char hex[16] = "0123456789abcdef"
+	char hex[16] = "0123456789abcdef";
 	int i;
 
 	num_1 = num;
 	if (num < 16)
 	{
-		buff[*buff_loc] = hex[j];
+		buff[*buff_loc] = hex[num];
 		*buff_loc = *buff_loc + 1;
 		buff_check(buff, buff_loc);
 		return (1);
@@ -47,6 +47,6 @@ int cpy_hex(va_list args, char *buff, unsigned long int *buff_loc)
 		*buff_loc = *buff_loc + 1;
 		buff_check(buff, buff_loc);
 	}
-	free(str0;
+	free(str);
 	return (count);
 }
