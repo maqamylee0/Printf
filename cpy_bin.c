@@ -44,6 +44,8 @@ int cpy_bin(va_list args, char *buff, unsigned long int *buff_loc)
 	{
 		buff[*buff_loc] = str[i];
 		*buff_loc = *buff_loc + 1;
+		buff_check(buff, buff_loc);
 	}
+	free(str);
 	return (count);
 }
