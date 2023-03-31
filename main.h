@@ -22,6 +22,7 @@ unsigned long int *buff_loc);
 int cpy_oct(va_list args, char *buff, unsigned long int *buff_loc);
 int cpy_hex(va_list args, char *buff, unsigned long int *buff_loc);
 int cpy_x_hex(va_list args, char *buff, unsigned long int *buff_loc);
+int cpy_address(va_list args, char *buff, unsigned long int *buff_loc);
 
 /**
  * struct func - takes specifier
