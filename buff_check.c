@@ -11,7 +11,7 @@
  */
 void buff_check(char *buff, unsigned long int *buff_loc)
 {
-	if (*buff_loc == 1024)
+	if (*buff_loc == 1300)
 	{
 		print_buff(buff, buff_loc);
 		*buff_loc = 0;

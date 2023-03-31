@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	if (!format)
 		return (-1);
 	va_start(args, format);
-	buff = malloc(1025);
+	buff = malloc(1300);
 	if (!buff)
 		return (0);
 
