@@ -19,7 +19,7 @@ int *i, char *buff, unsigned long int *buff_loc)
 	func_t print[] = {{"c", cpy_char}, {"s", cpy_str}, {"d", cpy_int},
 	{"i", cpy_int}, {"b", cpy_bin}, {"o", cpy_oct}, {"x", cpy_hex},
 	{"X", cpy_x_hex}, {"u", cpy_short_unsigned_int}, {"p", cpy_address},
-	{NULL, NULL}};
+	{"S", cpy_custom_str}, {NULL, NULL}};
 
 	if (print_percent(format, i, buff, buff_loc))
 	{
